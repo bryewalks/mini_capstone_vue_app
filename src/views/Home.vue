@@ -104,14 +104,14 @@ export default {
                     description: inputProduct.description,
                     image_url: inputProduct.image_url
                     };
-      axios.patch("api/products/" + inputProduct.id, params)
+      axios.patch("/api/products/" + inputProduct.id, params)
         .then(response => {
           console.log("Success", response.data);
           // inputProduct = response.data;
         });
     },
     destroyProduct: function(inputProduct) {
-      axios.delete("api/products/" + inputProduct.id)
+      axios.delete("/api/products/" + inputProduct.id)
         .then(response => {
           console.log("Success" ,response.data);
           var index = this.products.indexOf(inputProduct);
